@@ -1,0 +1,31 @@
+name: Pipeline Pomodoro
+
+# pipeline vai rodar quando tiver um push em alguma das branchs
+on:
+  push:
+    branches:
+      - dev
+      - test
+      - master
+
+jobs:
+  validacao-arquivos:
+    name: Verifica arquivos dos projeto
+    runs-on: ubuntu-latest # liga um computador virtual com linux
+
+    steps:
+      # baixa o código nesse computador virtual
+      - name: baixando código
+        uses: actions/checkout@v4
+
+      # mensagem no github
+      - name: iniciar validacao
+        run: echo "verificando a estrutura do site"
+
+      # verifica se os 3 arquivos estão certos
+      - name: Checagem de integridade
+        run: |
+          test -f index.html || (echo "Erro: index.html sumiu!" && exit 1)
+          test -f style.css || (echo "Erro: style.css sumiu!" && exit 1)
+          test -f script.js || (echo "Erro: script.js sumiu!" && exit 1)
+          echo "Sucesso! Todos os arquivos estão presentes e prontos para a Vercel."
