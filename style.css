@@ -1,0 +1,45 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1d1d1d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.pomodoro-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+    color: #333;
+}
+
+#tempo {
+    font-size: 60px;
+    font-weight: bold;
+    color: #14242e;
+    margin: 20px 0;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #457b9d;
+    color: white;
+}
+
+button:hover {
+    background-color: #1d3557;
+}
