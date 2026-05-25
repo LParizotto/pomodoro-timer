@@ -43,3 +43,15 @@ button {
 button:hover {
     background-color: #1d3557;
 }
+
+#log-container {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    text-align: left;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+#log-container p { margin: 4px 0; }
+
+.log-info { color: #457b9d; }
