@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Pomodoro Timer</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    
     <div class="pomodoro-container">
-        <h1>Pomodoro Timer</h1>
-        
-        <div id="tempo">25:00</div>
-        
-        <div class="controles">
-            <button id="btn-iniciar">Iniciar</button>
-            <button id="btn-pausar">Pausar</button>
-            <button id="btn-zerar">Zerar</button>
-        </div>
+      <h1>Pomodoro Timer</h1>
 
-        <div id="log-container"></div>
+      <div id="tempo">25:00</div>
+
+      <div class="controles">
+        <button id="btn-iniciar">Iniciar</button>
+        <button id="btn-pausar">Pausar</button>
+        <button id="btn-zerar">Zerar</button>
+      </div>
+
+      <div id="log-container"></div>
     </div>
 
+    <script src="services/log-service.js"></script>
+    <script src="services/notificacao-service.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
