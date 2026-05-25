@@ -6,13 +6,6 @@ const btnIniciar = document.getElementById('btn-iniciar');
 const btnPausar = document.getElementById('btn-pausar');
 const btnZerar = document.getElementById('btn-zerar');
 
-function registrarLog(nivel, mensagem) {
-  const log = document.createElement("p");
-  log.textContent = nivel + ": " + mensagem;
-  log.className = "log-info";
-  document.getElementById("log-container").prepend(log);
-}
-
 function atualizar() {
   let minutos = Math.floor(tempo / 60);
   let segundos = tempo % 60;
@@ -25,7 +18,6 @@ function atualizar() {
 
 function iniciar() {
   if (temporizador !== null) return;
-
   registrarLog("INFO", "temporizador iniciado");
 
   temporizador = setInterval(function() {
@@ -36,7 +28,7 @@ function iniciar() {
       clearInterval(temporizador);
       temporizador = null;
       registrarLog("WARN", "tempo esgotado");
-      alert("hora de descansar");
+      notificar("hora de descansar");
     }
   }, 1000);
 }
@@ -50,10 +42,10 @@ function pausar() {
 
 function zerar() {
   clearInterval(temporizador);
-  pausar();
+  temporizador = null;
   tempo = 25 * 60;
   atualizar();
-
+  
   registrarLog("INFO", "temporizador zerado");
 }
 
